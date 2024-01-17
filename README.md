@@ -1,7 +1,7 @@
 # codeApp (nonsensitive)
 
 ## Use
-This project was quickly put together in july 2022 to keep track of 
+This project was quickly put together in july 2022 to keep track of coding of student questionare responses in the norwegian part of the ICCS project. This is a repocitory trying to revive the project removing sensitive info from the original repo, and migrating it to Next14 (still with /pages). It still does not quite work in next14 however.
 
 ## Dev
 Run
