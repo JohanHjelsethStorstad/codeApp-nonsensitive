@@ -13,6 +13,9 @@ services:
     environment:
       NODE_ENV: development
       DB_URI: mongodb://root:example@db:27017/devdb?authSource=admin
+      SALT: 10
+      ACCESS_TOKEN_SECRET: vetyvety
+      REFRESH_TOKEN_SECRET: fjeiejwi
     depends_on:
       db:
         condition: service_healthy

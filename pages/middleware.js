@@ -2,7 +2,7 @@ import { NextResponse } from "next/server"
 import { serialize } from 'cookie'
 
 //AUTHERIZATION with jwt
-const middleware = async (req, res) => {  
+const middleware = async (req) => {  
     const pathname = req.nextUrl.pathname
     const apiReq = pathname.includes('/api/')
 
@@ -32,37 +32,38 @@ const middleware = async (req, res) => {
             redirect:`${origin}/signIn`
         }
     } else {
-        response = await fetch(`${origin}/api/authorize`, {
-                                headers: {
-                                    'Content-Type': 'application/json'
-                                },
-                                method: "POST",
-                                body: JSON.stringify({token: token, refresh: refresh})
-                                })
-                                .then(authResponse => authResponse.json())
-                                .then(authResponse => {
-                                    if (authResponse._id == null) return {
-                                        next: 0,
-                                        status: 401,
-                                        redirect:`${origin}/signIn`,
-                                        newToken: authResponse.newToken
-                                    }
-                                    isAdmin = authResponse.admin
-                                    return  {
-                                        next: 1,
-                                        status: 200,
-                                        redirect:``,
-                                        newToken: authResponse.newToken
-                                    }
-                                })
-                                .catch(error => {
-                                    console.log("could not authorize" + error)
-                                    return  {
-                                        next: 0,
-                                        status: 500,
-                                        redirect:`${origin}/serverError`
-                                    }
-                                })
+        response = await fetch(
+            `${origin}/api/authorize`, {
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                method: "POST",
+                body: JSON.stringify({token: token, refresh: refresh})
+                })
+                .then(authResponse => authResponse.json())
+                .then(authResponse => {
+                    if (authResponse._id == null) return {
+                        next: 0,
+                        status: 401,
+                        redirect:`${origin}/signIn`,
+                        newToken: authResponse.newToken
+                    }
+                    isAdmin = authResponse.admin
+                    return  {
+                        next: 1,
+                        status: 200,
+                        redirect:``,
+                        newToken: authResponse.newToken
+                    }
+                })
+                .catch(error => {
+                    console.log("could not authorize" + error)
+                    return  {
+                        next: 0,
+                        status: 500,
+                        redirect:`${origin}/serverError`
+                    }
+            })
     }
     if (response.newToken) {
         console.log('setting new token')
@@ -84,7 +85,7 @@ const middleware = async (req, res) => {
         return NextResponse.next()
     }
     if (apiReq) {
-        return new Response (JSON.stringify(response), {status: response.status,
+        return new Response(JSON.stringify(response), {status: response.status,
             headers: {
               'Content-Type': 'application/json',
             }})
