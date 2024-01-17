@@ -16,7 +16,7 @@ function AccountCard({name, _id, admin, team, numberCoded, id}) {
                 <div>{name}</div>
             </div>
             <div className={styles.image}>
-                <Image objectFit="contain" src={image} alt="profile picture" />
+                <Image width={200} objectFit="contain" src={image} alt="profile picture" />
             </div>
             <div className={styles.info}>
                 <div className={styles.infoItem}>

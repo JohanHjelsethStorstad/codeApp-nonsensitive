@@ -12,9 +12,9 @@ function Header() {
                 <Link href="/">Code</Link>
             </div>
             <nav>
-                <Link href="/code"><a className={heighlight("/code")}>code</a></Link>
-                <Link href="/account"><a className={heighlight("/account")}>my account</a></Link>
-                <Link href="/administrator"><a className={heighlight("/administrator")}>administrator</a></Link>
+                <Link href="/code" className={heighlight("/code")}>code</Link>
+                <Link href="/account" className={heighlight("/account")}>my account</Link>
+                <Link href="/administrator" className={heighlight("/administrator")}>administrator</Link>
             </nav>
         </header>
     )

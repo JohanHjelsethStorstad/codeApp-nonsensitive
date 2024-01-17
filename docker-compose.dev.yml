@@ -12,9 +12,10 @@ services:
       - ./:/usr/src/app 
     environment:
       NODE_ENV: development
-      DB_URI: mongodb://root:example@db:27017/devdb
+      DB_URI: mongodb://root:example@db:27017/devdb?authSource=admin
     depends_on:
-      - db
+      db:
+        condition: service_healthy
     links:
       - db
 
@@ -28,6 +29,11 @@ services:
       MONGO_INITDB_ROOT_USERNAME: root
       MONGO_INITDB_ROOT_PASSWORD: example
       MONGO_INITDB_DATABASE: devdb
+    healthcheck:
+      test: ["CMD-SHELL", "echo 'db.runCommand({ping: 1})' | mongosh --username root --password example --authenticationDatabase admin"]
+      interval: 15s
+      timeout: 10s
+      retries: 10
 
 
 volumes:

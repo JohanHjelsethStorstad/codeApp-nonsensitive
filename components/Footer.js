@@ -35,7 +35,7 @@ function Footer() {
           <div className={styles.infoA}>
             <button onClick={() => setWindow("about")}>about</button>
             <button onClick={() => setWindow("contactInfo")}>contact us</button>
-            <Link href="/code"><a>start coding</a></Link>
+            <Link href="/code">start coding</Link>
           </div>
           <div className={styles.infoB}>
             <button onClick={() => setWindow("privacyPolicy")}>privacy policy</button>
@@ -45,23 +45,23 @@ function Footer() {
           <div className={styles.links}>
             <div>
               <a target="blank" href='https://www.udir.no/'></a>
-              <Image objectFit="contain"  src={UDIR} alt="UDIR logo" />
+              <Image width={200} objectFit="contain" src={UDIR} alt="UDIR logo" />
             </div>
             <div>
               <a target="blank" href='https://www.iea.nl/'></a>
-              <Image objectFit="contain"  src={IEA} alt="IEA logo" />
+              <Image width={200} objectFit="contain" src={IEA} alt="IEA logo" />
             </div>
             <div>
               <a target="blank" href='https://www.iea.nl/studies/iea/iccs'></a>
-              <Image objectFit="contain"  src={ICCS} alt="ICCS logo"/>
+              <Image width={200} objectFit="contain" src={ICCS} alt="ICCS logo"/>
             </div>
             <div>
               <a target="blank" href='https://samforsk.no/'></a>
-              <Image objectFit="contain"  src={NTNUSAMF} alt="NTNU samfunnsforskning logo"/>
+              <Image width={200} objectFit="contain"  src={NTNUSAMF} alt="NTNU samfunnsforskning logo"/>
             </div>
             <div>
               <a target="blank" href='https://www.ntnu.no/'></a>
-              <Image objectFit="contain" src={NTNU} alt="NTNU logo" />
+              <Image width={200} objectFit="contain" src={NTNU} alt="NTNU logo" />
             </div>
           </div> 
       </footer>
