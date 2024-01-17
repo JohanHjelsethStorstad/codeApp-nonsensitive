@@ -1,0 +1,62 @@
+$font: "arial";
+$l: clamp(30px, calc(2vw + 10px), 70px);
+$m: clamp(20px, calc(1.3vw + 12px), 30px);
+$s: clamp(12px, calc(10px + 0.5vw), 20px);
+
+$thick: 700;
+
+$black: #000000;
+$grey: #F6F4F2;
+$darkGrey: darken($grey, 5%);
+$white: #FFFFFF;
+$blue: #425664;
+$darkBlue: darken($blue, 5%);
+$brown: #C6AD8F;
+
+$space: 10px;
+
+@mixin center() {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+@mixin linkButton() {
+    background: none;
+    border: none;
+    padding: 0;
+    text-decoration: underline;
+    cursor: pointer;
+    text-decoration: none;
+    font-size: inherit;
+    font-weight: inherit;
+}
+
+@mixin makeBackground($x) {
+    background: url($x);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+@mixin blueButton() {
+    background-color: $blue;
+    padding: $space;
+    margin-top: $space;
+    color: $white;
+    border: none;
+    min-width: 50px;
+    &:hover {
+        cursor: pointer;
+        background-color: darken($blue, 10%);
+    }
+}
+
+@mixin button($color, $text) {
+    @include blueButton();
+    color: $text;
+    background-color: $color;
+    &:hover {
+        background-color: darken($color, 10%);
+    }
+}

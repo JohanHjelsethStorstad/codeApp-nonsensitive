@@ -1,0 +1,7 @@
+@use '../styles/common.scss';
+
+.wrapper {
+    margin-top: 30px;
+    @include common.center();
+    width: 100%;
+}

@@ -1,0 +1,19 @@
+@use '../../styles/common.scss';
+
+.contact {
+    padding: common.$space;
+    margin: common.$space / 2;
+    border: 3px solid common.$blue;
+
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    &> *:nth-child(2) {
+        text-align: end;
+    }
+    &> *:nth-child(1) {
+        &> *:nth-child(1) {
+            font-weight: common.$thick;
+        }
+    }
+}

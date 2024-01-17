@@ -1,0 +1,14 @@
+@use "common";
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+  font-family: common.$font;
+  font-size: common.$s;
+}
+
+* {
+  box-sizing: border-box;
+  
+}

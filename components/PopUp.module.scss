@@ -1,0 +1,41 @@
+@use "../styles/common";
+$radius: 50px;
+.wrapper {
+    width: 50vw;
+    min-height: 50vh;
+    max-height: 70vh;
+
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: $radius / 2;
+    z-index: 6;
+    background-color: common.$grey;
+    box-shadow: 10px 10px black;
+    border-radius: $radius;
+
+    display: flex;
+    flex-flow: column;
+    >.close {
+        position: absolute;
+        top: $radius / 2;
+        right: $radius / 2;
+        width: 20px;
+        height: 20px;
+        border: none;
+        @include common.makeBackground("../images/symbols/cross.svg");
+        &:hover {
+            cursor: pointer;
+        }
+    }
+    >.header {
+        width: 100%;
+        font-size: common.$m;
+        text-align: center;
+    }
+    >.content {
+        width: 100%;
+        overflow-y: scroll;
+    }
+}

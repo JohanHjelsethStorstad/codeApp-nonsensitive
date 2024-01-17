@@ -1,0 +1,45 @@
+@use '../styles/common.scss';
+
+.wrapper {
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr;
+    .onlyR {
+        @include common.center();
+    }
+    > * {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .newResponse, .done {
+        padding: common.$space;
+        .header {
+            font-size: common.$m;
+        }
+        .text {
+
+        }
+        .btn {
+            @include common.blueButton()
+        }
+        .form {
+            display: flex;
+            flex-direction: column;
+            .bookletSelection {
+                margin-top: common.$space;
+                width: 100%;
+                text-align-last: center;
+            }
+            .btn {
+                margin-top: 0;
+            }
+        }
+        .error {
+            color: red
+        }
+    }
+}

@@ -1,0 +1,17 @@
+@use '../styles/common.scss';
+
+.wrapper {
+    background-color: common.$blue;
+    color: common.$white;
+    padding: common.$space;
+    position: relative;
+    border-radius: 10px;
+    &.pending {
+        background-color: red;
+    }
+    .r {
+        position: absolute;
+        bottom: common.$space;
+        right: common.$space;
+    }
+}

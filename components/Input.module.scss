@@ -1,0 +1,71 @@
+@use "../styles/common.scss";
+
+.wrapper {
+  position: relative;
+  padding: 15px 0 0;
+  margin-top: 10px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.field {
+  width: 100%;
+  border: 0;
+  border-bottom: 2px solid common.$black;
+  outline: 0;
+  font-size: common.$s;
+  color: common.$black;
+  padding: 7px 0;
+  background: transparent;
+  transition: border-color 0.2s;
+
+  &::placeholder {
+    visibility: hidden;
+  }
+
+  &:placeholder-shown ~ .labe {
+    font-size: common.$s;
+    cursor: text;
+    top: 20px;
+  }
+}
+
+.labe {
+  position: absolute;
+  top: 0;
+  display: block;
+  transition: 0.2s;
+  font-size: 1rem;
+  z-index: -1;
+}
+
+.field:focus {
+  ~ .labe {
+    position: absolute;
+    top: 0;
+    display: block;
+    transition: 0.2s;
+    font-size: calc(common.$s * 0.8);
+    color: common.$black;   
+  }
+  padding-bottom: 6px;  
+  border-width: 3px;
+  border-image-slice: 1;
+}
+
+.red {
+  color: red !important;
+  .field {
+    border-bottom: 2px solid red !important;
+    &:focus {
+      border-width: 3px !important;
+    }
+  }
+  &::placeholder {
+    color: red !important;
+  }
+  .labe {
+    color: red !important;  
+  }
+}

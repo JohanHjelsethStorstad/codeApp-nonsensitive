@@ -1,0 +1,29 @@
+@use '../../styles/common.scss';
+
+.wrapper {
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto auto;
+    grid-template-areas: 
+        'total total'
+        'a b'
+    ;
+    grid-gap: common.$space / 2;
+    .total {
+        width: 100%;
+        height: 100%;
+        grid-area: total;
+    }
+    .a {
+        width: 100%;
+        height: 100%;
+        grid-area: a;
+    }
+    .b {
+        width: 100%;
+        height: 100%;
+        grid-area: b;
+    }
+}

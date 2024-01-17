@@ -1,0 +1,38 @@
+@use '../styles/common.scss';
+
+.wrapper {
+    margin-top: common.$space;
+    border-radius: 10px;
+    background-color: common.$grey;
+    box-shadow: 5px 5px darken(common.$grey, 40%);
+    padding: 10px;
+
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto auto;
+    grid-template-areas: 
+        "namee namee"
+        "imagee info";
+    .name {
+        grid-area: namee;
+        font-size: common.$m;
+        font-weight: common.$thick;
+    }
+    .image {
+        grid-area: imagee;
+        width: 110px;
+        height: 110px;
+        @include common.center();
+    }
+    .info {
+        grid-area: info;
+        .infoItem {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: common.$space;
+            >div:first-child {
+                margin-right: common.$space;
+            }
+        }
+    }
+}

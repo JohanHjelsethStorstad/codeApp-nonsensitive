@@ -1,0 +1,87 @@
+@use "../styles/common.scss";
+
+.footer {
+    padding: common.$space;
+    width: 100%;
+    background-color: common.$brown;
+    color: common.$blue;
+    min-height: 100px;
+
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: auto auto;
+    grid-template-areas:
+        "dev infoA infoB"
+        "logos logos logos";
+    gap: common.$space;
+
+    >.dev {
+        grid-area: dev;
+    }
+    >.infoA {
+        grid-area: infoA; 
+        align-items: center;
+    }
+    >.infoB {
+        grid-area: infoB;
+        align-items: flex-end;
+    }
+    >.infoA, .infoB {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        button {
+            @include common.linkButton();
+            color: common.$blue;
+            font-size: common.$s;
+        }
+        a {
+            text-decoration: none;
+            color: common.$blue;
+        }
+        button , a { //for animasjon 
+            position: relative;
+            &::after {
+                content: "";
+                position: absolute;
+                width: 100%;
+                height: 2px;
+                bottom: 0;
+                left: 0;
+                background-color: common.$blue;
+                transform-origin: center center;
+                transition: transform 0.25s ease-out;
+                transform: scale(0);
+            }
+            &:hover::after {
+                transform: scale(1);
+            }
+        }
+    }
+    >.links {
+        grid-area: logos;
+        @include common.center();
+        > * {
+            > a {
+                z-index: 2;
+                display: block;
+                position: absolute; 
+                top: 0; 
+                right: 0; 
+                bottom: 0; 
+                left: 0; 
+                width: 100%; 
+                height: 100%;
+            }
+            flex: 1;
+            @include common.center();
+            filter: grayscale(100%);
+            transform: scale(.84);
+            transition: .2s linear;
+            &:hover {
+                filter: none;
+                transform: scale(1);
+            }
+        }
+    }
+}

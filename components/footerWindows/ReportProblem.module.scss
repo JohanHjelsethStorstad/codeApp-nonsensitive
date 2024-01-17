@@ -1,0 +1,46 @@
+@use '../../styles/common.scss';
+
+.wrapper {
+    @include common.center();
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+    form {
+        display: flex;
+        flex-flow: column;
+        height: 100%;
+        width: 100%;
+        .feedbackBox {
+            width: 100%;
+            height: 100px;
+            overflow: scroll;
+            margin-top: common.$space;
+            font-family: common.$font;
+            font-size: common.$s;
+            border: 2px solid common.$black;
+            &.red {
+                border: 2px solid red;
+            }
+        }
+        .error {
+            color: red;
+        }
+        .success {
+            color: rgb(123, 188, 123);
+            font-weight: common.$thick;
+            opacity: 0;
+            transition: opacity .3s;
+            &.show {
+                opacity: 1;
+            }
+        }
+        button {
+            width: 30%;
+            @include common.blueButton;
+        }
+        >*:last-child {
+            display: flex;
+            justify-content: space-between;
+        }
+    }
+}

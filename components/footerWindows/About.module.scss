@@ -1,0 +1,10 @@
+@use '../../styles/common.scss';
+
+.wrapper {
+    >* {
+        padding: common.$space;
+        >*:first-child {
+            font-weight: common.$thick;
+        }
+    }
+}

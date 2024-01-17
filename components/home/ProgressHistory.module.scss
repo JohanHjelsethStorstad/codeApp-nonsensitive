@@ -1,0 +1,25 @@
+@use '../../styles/common.scss';
+
+.wrapper {
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    position: relative;
+    .container {
+        width: 100%;
+        height: 100%
+    }
+    * {
+        font-size:12px;
+    }
+    .label {
+        color: common.$blue;
+        font-size: common.$s;
+        position: absolute;
+        top: 0;
+        right: 10px;
+        &.large {
+            font-size: common.$m;
+        }
+    }
+}

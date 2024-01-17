@@ -1,0 +1,16 @@
+@use '../styles/common.scss';
+
+.wrapper {
+    max-width: 500px;
+    @include common.center();
+    flex-direction: column;
+    .text {
+        text-align: center;
+    }
+    .btn {
+        @include common.blueButton();
+    }
+    .error {
+        color: red;
+    }
+}

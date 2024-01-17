@@ -1,0 +1,21 @@
+@use '../../styles/common.scss';
+
+.wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto auto;
+    grid-template-areas: 
+        'total total'
+        'a b'
+    ;
+    grid-gap: common.$space / 2;
+    .total {
+        grid-area: total;
+    }
+    .a {
+        grid-area: a;
+    }
+    .b {
+        grid-area: b;
+    }
+}

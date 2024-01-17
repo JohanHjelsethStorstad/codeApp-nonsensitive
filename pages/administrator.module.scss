@@ -1,0 +1,110 @@
+@use '../styles/common.scss';
+
+$selectionTranlate: 15px;
+
+.wrapper {
+    margin-top: 20px;
+    width: 100%;
+    padding-top: 10px;
+    display: grid;
+    grid-template-columns: auto 1fr;
+    padding: common.$space;
+    .leftSide {
+        position: sticky;
+        top: 0;
+        left: 0;
+    }
+    .accountsHeader {
+        font-size: common.$m;
+        width: 100%;
+        text-align: center;
+        padding-right: $selectionTranlate;
+    }
+    .accountsOverflowWrapper {
+        label {
+            color: common.$blue;
+        }
+        overflow-y: hidden;
+        .accounts {
+            padding-right: 5px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            transition: transform .5s ease-out, margin-bottom .5s ease-out;
+            padding-bottom: common.$space;
+            .createAccount {
+                width: 100%;
+                .inputs {
+                    .formUpButton {
+                        @include common.makeBackground('../images/symbols/arrow.png');
+                        width: 30px;
+                        height: 30px;
+                        border: none;
+                        &:hover {
+                            cursor: pointer;
+                        }
+                    }
+                    > *:nth-child(2) {
+                        margin-top: 0;
+                    }
+                    .team {
+                        margin-top: common.$space;
+                        .choices {
+                            display: flex;
+                            >* {
+                                margin-right: common.$space;
+                            }
+                        }
+                        &.error * {
+                            color: red;
+                        }
+                    }
+                    .admin {
+                        margin-top: common.$space;
+                        display: flex;
+                        flex-direction: column;
+                    }
+                }
+                .createButton {
+                    width: calc(100% - $selectionTranlate);
+                    @include common.blueButton();
+                }
+            }
+            .accountList {
+                > * {
+                    position: relative;
+                    padding-right: $selectionTranlate;
+                    transition: transform .2s;
+                    &.selectedAccount, &:hover {
+                        transform: translateX($selectionTranlate);
+                    }
+                    > button {
+                        border: none;
+                        background: transparent;
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        width: 100%;
+                        height: 100%;
+                        z-index: 2;
+                        &:hover {
+                            cursor: pointer;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .accountInfo {
+        margin: common.$space;
+        margin-right: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        > .text {
+            height: 100%;
+            margin-top: 30%;
+        }
+    }
+}

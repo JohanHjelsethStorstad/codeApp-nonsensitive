@@ -1,0 +1,11 @@
+@use 'common';
+
+:export {
+    black: common.$black;
+    grey: common.$grey;
+    white: common.$white;
+    blue: common.$blue;
+    brown: common.$brown; 
+    darkGrey: common.$darkGrey;
+    darkBlue: common.$darkBlue;
+}

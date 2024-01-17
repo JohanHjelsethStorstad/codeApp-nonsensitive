@@ -1,0 +1,39 @@
+{
+  "name": "koding",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
+    "addResponses": "node setUp/addResponses",
+    "dummyData": "node setUp/dummyData",
+    "importExcel": "node setUp/importExcel",
+    "copy": "node setUp/copy"
+  },
+  "dependencies": {
+    "axios": "^0.27.2",
+    "bcrypt": "^5.0.1",
+    "convert-excel-to-json": "^1.7.0",
+    "cookie": "^0.5.0",
+    "crypto": "^1.0.1",
+    "d3": "^7.6.1",
+    "dotenv": "^16.0.1",
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^6.3.6",
+    "multer": "^1.4.5-lts.1",
+    "multer-gridfs-storage": "^5.0.2",
+    "next": "12.1.6",
+    "next-connect": "^0.12.2",
+    "react": "18.1.0",
+    "react-dom": "18.1.0",
+    "sass": "^1.52.3",
+    "sharp": "^0.30.7",
+    "uuid": "^8.3.2"
+  },
+  "devDependencies": {
+    "eslint": "8.17.0",
+    "eslint-config-next": "12.1.6"
+  }
+}
